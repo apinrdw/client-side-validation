@@ -1,23 +1,15 @@
-<%= form_for(@user, format: :js, remote: true, html: {id: 'user_form'}) do |f| %>
-  <div class="alert-box hidden">
-    <ul></ul>
+<div class="row">
+  <div class="col-md-12">
+    <%= simple_form_for(@user, html: {class: 'form-horizontal'}) do |f| %>
+      <%= f.input :name, :validate => true %>
+      <%= f.input :email, :validate => true %>
+      <%= f.input :password, :validate => true %>
+      <div class="row actions">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+          <%= f.submit nil, data: {disable_with: 'Submitting...'}, class: 'btn-submit btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :name %>
-    <br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit nil, data: {disable_with: 'Submitting...'} %>
-  </div>
-<% end %>
+</div>
