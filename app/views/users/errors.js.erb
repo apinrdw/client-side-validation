@@ -1,0 +1,5 @@
+var errors = [];
+<% @user.errors.full_messages.each do |e| %>
+errors.push('<li><%= e %></li>');
+<% end %>
+$('#user_form').find('.alert-box > ul').empty().append(errors.join(''));
