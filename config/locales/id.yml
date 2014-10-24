@@ -1,0 +1,8 @@
+id:
+  errors:
+    messages:
+      blank: tidak boleh kosong bro
+      invalid: kaga bener
+      too_short:
+        one: kependekan om (minimum 1 karakter)
+        other: kependekan om (minimum %{count} karakter)
