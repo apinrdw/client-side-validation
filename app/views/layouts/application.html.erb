@@ -8,6 +8,10 @@
 </head>
 <body>
 <div class="container">
+  <div class="text-right">
+    Language:
+    <%= link_to 'Bahasa', url_for(locale: :id) %> | <%= link_to 'English', url_for(locale: :en) %>
+  </div>
   <%= yield %>
 </div>
 </body>
