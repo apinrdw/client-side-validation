@@ -3,8 +3,12 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :production, :staging do
+  gem "pg"
+end
+group :development, :test do
+  gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0.beta1'
 # Use Uglifier as compressor for JavaScript assets
@@ -50,3 +54,7 @@ end
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'judge-simple_form'
+
+gem 'rails_12factor', group: :production
+
+ruby "2.1.2"
